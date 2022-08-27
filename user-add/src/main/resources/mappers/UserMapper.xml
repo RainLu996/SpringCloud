@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lujun61.useradd.dao.UserMapper">
+    <!--SQL片段，记录基础字段-->
+    <sql id="BaseColumns">
+        id,user_name,age,email
+    </sql>
+
+    <!--IPage<User> selectPageVo(Page<User> page, Integer age);-->
+    <select id="selectPageVoWhereGtAge" resultType="User">
+        SELECT
+        <include refid="BaseColumns"/>
+        FROM springcloud.t_user
+        WHERE age > #{age}
+    </select>
+</mapper>
