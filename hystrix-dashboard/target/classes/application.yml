@@ -1,0 +1,12 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: hystrix-dashboard
+
+    # \u5141\u8BB8\u8BBF\u95EEdashboard\u7684\u4E3B\u673Aip
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
+
+

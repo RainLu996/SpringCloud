@@ -1,0 +1,45 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: api-save-add-feign
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://rainlu:123456@localhost:8761/eureka
+
+feign:
+  hystrix:
+    enabled: true
+
+# feign-dashboard 配置注意1
+# 异常信息解决：ashboardConfiguration$ProxyStreamServlet : Failed opening connection to http://localhost:9004/hystrix.stream : 503 : HTTP/1.1 503
+# 暴露全部的监控信息：让信息可以通过actuator回馈给dashboard
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 设置Ribbon服务降级策略
+ribbon:  # 以下配置理论上触发降级响应的时间范围：5000~8000
+         # 5000：不计算Ribbon进行连接的时间，只认为是由服务提供者所造成的响应超时
+         # 8000：Ribbon的重连次数耗尽，但是最后关头连接上了。可是连接上之后，服务提供者由一系列原因造成了响应超时
+  ## Ribbon与服务建⽴连接的最⼤等待时间（毫秒）
+  ConnectTimeout: 1000  # t1
+  ## 当前服务提供者尝试重连的次数
+  MaxAutoRetries: 2     # t2
+  ## 与服务提供者的通信超时时间
+  ReadTimeout: 5000     # t3
+
+## 设置熔断器服务降级时间 （默认 1000）
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 设置技巧见如下公式：如果小于这个值，将会导致上述的Ribbon配置失去意义
+            timeoutInMilliseconds: 8000   # t4    （t4 = t1 * (t2 + 1) + t3）

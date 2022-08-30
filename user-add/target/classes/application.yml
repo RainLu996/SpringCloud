@@ -1,0 +1,36 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: user-add
+
+  datasource:
+    druid:
+      driver-class-name:  com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.lujun61.useradd.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #打印日志
+
+# mybatis-plus的配置文件中的内容不与mybatis配置文件共用。需要单独配置！！！
+mybatis-plus:
+  # mybatisPlus的全局配置
+  global-config:
+    db-config:
+      # 设置实体类所对应的表的统一前缀（设置之后，实体类上不用加TableName注解）
+      table-prefix: t_
+      # 配置MyBatis-Plus的主键策略
+      id-type: assign_id
+  type-aliases-package: com.lujun61.useradd.entity
+  mapper-locations: classpath:mappers/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #打印日志
+  # 配置扫描通用枚举
+  type-enums-package: com.lujun61.useradd.enums
+

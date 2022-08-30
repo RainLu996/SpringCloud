@@ -1,0 +1,26 @@
+# 设置服务注册与发现中心的端口号
+server:
+  port: 8761
+
+# 在微服务架构中，服务注册中⼼是通过服务应⽤的名称来区分每个服务的；
+# 因此，我们在创建每个服务之后，应当指定当前服务的 应⽤名/项⽬名。
+spring:
+  application:
+    name: service-eureka
+    # 配置SpringSecurity，设置访问eureka的帐号和密码。
+    # 需要进一步在javaConfig中配置详细的拦截规则
+  security:
+    user:
+      name: rainlu
+      password: 123456
+
+eureka:
+  client:
+    ## ip 就是服务注册与发现中⼼服务器的ip
+    ## port 就是服务注册与发现中⼼的port
+    service-url:
+      defaultZone: http://rainlu:123456@localhost:8761/eureka
+    ## 设置服务注册与发现中⼼是否为为集群搭建（如果为集群模式，多个eureka节点之间需要相互注册）
+    register-with-eureka: false
+    ## 设置服务注册与发现中是否作为服务进⾏注册（如果为非集群模式，则不用当做服务进行注册）
+    fetch-registry: false

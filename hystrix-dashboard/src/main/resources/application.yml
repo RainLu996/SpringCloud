@@ -1,0 +1,14 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: hystrix-dashboard
+
+    # feign-dashboard \u914D\u7F6E\u6CE8\u610F3
+    # \u914D\u7F6E\u5141\u8BB8\u8BBF\u95EEdashboard\u7684\u4E3B\u673Aip
+    # feign-dashboard \u914D\u7F6E\u6CE8\u610F4\uFF1A\u9700\u8981\u5148\u8BBF\u95EE\u670D\u52A1\uFF0C\u6570\u636E\u5206\u6790\u624D\u4F1A\u663E\u73B0\u51FA\u6765\uFF01
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
+
+
