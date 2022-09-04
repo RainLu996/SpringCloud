@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/consumer-save-order-ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/consumer-save-order-feign/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix-dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/service-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/consume-simple-query-order/pom.xml" />
       </list>
     </option>
   </component>

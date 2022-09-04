@@ -7,12 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="consume-simple-query-order" />
+        <module name="service-gateway" />
+        <module name="user-add" />
+        <module name="hystrix-dashboard" />
         <module name="provider-order-add" />
         <module name="consumer-save-order-ribbon" />
-        <module name="user-add" />
         <module name="service-eureka" />
         <module name="consumer-save-order-feign" />
-        <module name="hystrix-dashboard" />
       </profile>
     </annotationProcessing>
   </component>

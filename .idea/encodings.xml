@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/consume-simple-query-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consume-simple-query-order/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consumer-save-order-feign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consumer-save-order-feign/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consumer-save-order-ribbon/src/main/java" charset="UTF-8" />
@@ -10,6 +12,8 @@
     <file url="file://$PROJECT_DIR$/provider-order-add/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/provider-order-add/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-add/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
